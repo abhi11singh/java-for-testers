@@ -20,6 +20,11 @@ public class WhenCreatingObjects {
        System.out.println(kt.getName());
        System.out.println(kt.getFavoriteFood());
        System.out.println(kt.getAge());
+
+      System.out.println("===============================================");
+
+
+
    }
 
    @Test
@@ -34,10 +39,29 @@ public class WhenCreatingObjects {
    public void cats_make_noise() {
       Cat felix = new Cat("Felix","Tuna",4);
 
-      felix.makeNoise();
-      felix.feedFood("Tuna");
-      felix.groom();
+//      felix.makeNoise();
+//      felix.feedFood("Tuna");
+//      felix.groom();
+      System.out.println("Felix goes "+felix.makeNoise());
 
+   }
+
+   @Test
+   public void dog_make_noise() {
+      Dog fido = new Dog("Fido","Bone",5);
+      System.out.println("Fido goes "+fido.makeNoise());
+   }
+
+   @Test
+   public void pets_make_noise() {
+      Pet felix = new Cat("Felix","Tuna",4);
+      Pet fido = new Dog("Fido","Bone",5);
+      Pet rusty = new Hampster("Rusty","Wheel",3);
+
+      System.out.println("Felix walks "+felix.goForWalks());
+      System.out.println("Felix goes " + felix.makeNoise());
+      System.out.println("Fido goes " + fido.makeNoise());
+      System.out.println("Rust goes "+rusty.makeNoise());
    }
 
    @Test
@@ -48,5 +72,13 @@ public class WhenCreatingObjects {
 
       System.out.println(felix.makeNoise());;
       System.out.println(kt.makeNoise());;
+   }
+
+   @Test
+   public void creating_a_hampster() {
+      Hampster rusty = new Hampster("Rusty","Wheel",1);
+      Assert.assertEquals(rusty.getName(),"Rusty");
+      Assert.assertEquals(rusty.getFavoriteGame(),"Wheel");
+      Assert.assertEquals(rusty.getAge(),1);
    }
 }
